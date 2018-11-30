@@ -7,16 +7,16 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <router-link class="nav-link active" to="/dashboard">
                             <span data-feather="home"></span>
                             Dashboard <span class="sr-only">(current)</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <router-link class="nav-link" to="/profile">
                             <span data-feather="file"></span>
-                            Orders
-                        </a>
+                            Profile
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
@@ -44,25 +44,9 @@
                     </li>
                 </ul>
         </nav>
-    </div>
-</div>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <router-view></router-view>
+        </main>
     </div>
 </div>
 @endsection
